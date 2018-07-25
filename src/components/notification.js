@@ -2,14 +2,22 @@ import React from 'react';
 
 export default function Notification(props) {
 
-    return(
-        <h2
-            id='notification'
-        >
-        
-        {props.notificaition} <span>Guess Again!</span>
-        
-        </h2>
-    )
+    const key = props.guessCount;
+
+  let guessAgain;
+  if (key !== 0) {
+    guessAgain = <span className="visuallyhidden">Guess again!</span>;
+  }
+  return (
+    <h2 
+      key={key}
+      id="feedback"
+      role="status"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      {props.feedback} {guessAgain}
+    </h2>
+    );
 
 }

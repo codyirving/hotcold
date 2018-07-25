@@ -7,7 +7,7 @@ export default class HotCold extends React.Component {
         super(props);
         this.state = {
             guesses: [],
-            notification: 'Make your Guess!',
+            feedback: 'Make your Guess!',
             correctAnswer: Math.round(Math.random() * 100) + 1
         };
     }
@@ -67,7 +67,7 @@ export default class HotCold extends React.Component {
                 
                 <main>
                     <GuessSection
-                        notification={this.state.notification}
+                        feedback={this.state.feedback}
                         guessCount={this.state.guesses.length}
                         onMakeGuess={guess=>this.makeGuess(guess)}
                     />

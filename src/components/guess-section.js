@@ -5,7 +5,7 @@ export default function GuessSection(props) {
     
     return(
         <section>
-            <Notification notification={props.feedback} guessCount={props.guessCount} />
+            <Notification feedback={props.feedback} guessCount={props.guessCount} />
             <GuessForm onMakeGuess={guess => props.onMakeGuess(guess)} />
         </section>
     );
